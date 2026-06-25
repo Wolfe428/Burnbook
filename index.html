@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Burn Book 🔥 — Roast Cards & Savage Horoscopes for $2</title>
+<meta name="description" content="Pay $2. Get 5 AI-generated roast cards OR savage horoscopes. Cheaper than therapy. Funnier than a birthday card.">
+<meta property="og:title" content="Burn Book 🔥 — AI Roasts & Horoscopes for $2">
+<meta property="og:description" content="A fake legal cease & desist about your friend's BBQ skills. A horoscope that calls out your ex. $2 for 5. No subscription.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #FDF8F0; --ink: #1A1208; --red: #C8321A; --red-light: #FAEAE6;
+    --purple: #5B3FA6; --purple-light: #F0EBFF;
+    --muted: #7A6E62; --border: rgba(26,18,8,0.12); --gold: #C49A3C;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); }
+
+  /* NAV */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 2rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--cream); z-index: 100; }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; text-decoration: none; color: var(--ink); }
+  .nav-logo span { color: var(--red); }
+  .nav-cta { font-size: 14px; font-weight: 500; background: var(--ink); color: white; padding: 8px 20px; border-radius: 6px; text-decoration: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.15s; }
+  .nav-cta:hover { background: var(--red); }
+
+  /* HERO */
+  .hero { max-width: 780px; margin: 0 auto; padding: 5rem 2rem 3.5rem; text-align: center; }
+  .hero-pill { display: inline-block; font-size: 13px; font-weight: 500; background: var(--ink); color: white; padding: 5px 16px; border-radius: 20px; margin-bottom: 1.5rem; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(44px, 9vw, 76px); font-weight: 900; line-height: 1.02; margin-bottom: 1.25rem; }
+  .hero-title em { font-style: italic; color: var(--red); }
+  .hero-sub { font-size: 18px; color: var(--muted); line-height: 1.7; max-width: 500px; margin: 0 auto 2.5rem; }
+  .price-banner { display: inline-flex; align-items: center; gap: 10px; background: white; border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 1.5rem; margin-bottom: 2rem; }
+  .price-main { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; color: var(--red); }
+  .price-detail { text-align: left; }
+  .price-detail strong { display: block; font-size: 14px; }
+  .price-detail span { font-size: 12px; color: var(--muted); }
+  .hero-actions { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .btn-red { display: inline-flex; align-items: center; gap: 8px; background: var(--red); color: white; padding: 14px 28px; border-radius: 8px; font-size: 16px; font-weight: 500; text-decoration: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: opacity 0.15s; }
+  .btn-red:hover { opacity: 0.88; }
+  .btn-ghost { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--ink); padding: 14px 28px; border-radius: 8px; font-size: 16px; font-weight: 500; text-decoration: none; border: 1px solid var(--border); cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.15s; }
+  .btn-ghost:hover { background: white; }
+  .hero-note { font-size: 13px; color: var(--muted); margin-top: 1rem; }
+
+  /* PRODUCTS */
+  .products { max-width: 780px; margin: 0 auto; padding: 1rem 2rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .product-card { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); background: white; }
+  .product-header { padding: 1.5rem; }
+  .product-header.roast { background: var(--red-light); }
+  .product-header.horoscope { background: var(--purple-light); }
+  .product-icon { font-size: 36px; margin-bottom: 0.6rem; display: block; }
+  .product-name { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin-bottom: 0.3rem; }
+  .product-name.roast { color: var(--red); }
+  .product-name.horoscope { color: var(--purple); }
+  .product-tagline { font-size: 14px; color: var(--muted); line-height: 1.5; }
+  .product-body { padding: 1.25rem; }
+  .product-feature { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--muted); margin-bottom: 0.6rem; line-height: 1.5; }
+  .product-feature i { font-size: 15px; margin-top: 1px; flex-shrink: 0; }
+  .product-feature i.roast { color: var(--red); }
+  .product-feature i.horo { color: var(--purple); }
+  .product-try { display: block; width: 100%; padding: 0.75rem; border-radius: 8px; font-size: 14px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; border: none; margin-top: 1rem; transition: opacity 0.15s; }
+  .product-try.roast { background: var(--red); color: white; }
+  .product-try.horoscope { background: var(--purple); color: white; }
+  .product-try:hover { opacity: 0.88; }
+
+  /* EXAMPLES */
+  .examples { background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 5rem 2rem; }
+  .section-center { text-align: center; max-width: 680px; margin: 0 auto; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 700; margin-bottom: 0.75rem; }
+  .section-sub { font-size: 16px; color: var(--muted); margin-bottom: 3rem; line-height: 1.6; }
+  .example-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 780px; margin: 0 auto; }
+  .ex-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .ex-header { padding: 0.65rem 1rem; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; }
+  .ex-header.roast { background: var(--red-light); color: var(--red); }
+  .ex-header.horoscope { background: var(--purple-light); color: var(--purple); }
+  .ex-body { padding: 1.1rem; font-size: 13px; line-height: 1.8; color: var(--ink); background: white; }
+  .ex-body.memo { font-family: 'Courier New', monospace; font-size: 12px; }
+
+  /* HOW IT WORKS */
+  .how { max-width: 680px; margin: 0 auto; padding: 5rem 2rem; text-align: center; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+  .step-num { width: 42px; height: 42px; border-radius: 50%; font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.85rem; }
+  .step-num.red { background: var(--red-light); color: var(--red); }
+  .step-num.purple { background: var(--purple-light); color: var(--purple); }
+  .step-num.gold { background: #FEF3DC; color: var(--gold); }
+  .step-title { font-size: 15px; font-weight: 500; margin-bottom: 0.4rem; }
+  .step-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* REDDIT SECTION */
+  .reddit { background: var(--ink); color: white; padding: 5rem 2rem; text-align: center; }
+  .reddit-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 4vw, 40px); font-weight: 900; margin-bottom: 1rem; }
+  .reddit-title em { color: #F5A78A; font-style: italic; }
+  .reddit-sub { font-size: 15px; color: rgba(255,255,255,0.6); margin-bottom: 2.5rem; line-height: 1.7; max-width: 500px; margin-left: auto; margin-right: auto; margin-bottom: 2.5rem; }
+  .post-mockup { background: white; color: var(--ink); border-radius: 12px; padding: 1.5rem; max-width: 540px; margin: 0 auto 2.5rem; text-align: left; }
+  .post-sub { font-size: 11px; color: var(--muted); margin-bottom: 0.5rem; font-weight: 500; }
+  .post-title { font-size: 16px; font-weight: 500; line-height: 1.4; margin-bottom: 0.75rem; }
+  .post-votes { display: flex; align-items: center; gap: 1rem; font-size: 12px; color: var(--muted); }
+  .vote-num { font-weight: 500; color: var(--red); }
+  .btn-white { display: inline-flex; align-items: center; gap: 8px; background: white; color: var(--ink); padding: 14px 28px; border-radius: 8px; font-size: 16px; font-weight: 500; text-decoration: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: opacity 0.15s; }
+  .btn-white:hover { opacity: 0.9; }
+
+  /* GENERATOR */
+  .page { display: none; }
+  .page.active { display: block; }
+  .landing { }
+  .landing.hidden { display: none; }
+  .gen-wrap { max-width: 680px; margin: 0 auto; padding: 2rem 1.5rem 5rem; }
+  .gen-back { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--muted); background: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; margin-bottom: 1.5rem; padding: 0; }
+  .gen-back:hover { color: var(--ink); }
+
+  /* MODE SWITCHER */
+  .mode-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 2rem; }
+  .mode-btn { padding: 1rem; border-radius: 10px; border: 2px solid var(--border); background: white; cursor: pointer; font-family: 'DM Sans', sans-serif; text-align: center; transition: all 0.15s; }
+  .mode-btn .mode-icon { font-size: 24px; display: block; margin-bottom: 0.4rem; }
+  .mode-btn .mode-name { font-size: 15px; font-weight: 500; margin-bottom: 0.2rem; }
+  .mode-btn .mode-sub { font-size: 12px; color: var(--muted); }
+  .mode-btn.active-roast { border-color: var(--red); background: var(--red-light); }
+  .mode-btn.active-roast .mode-name { color: var(--red); }
+  .mode-btn.active-horo { border-color: var(--purple); background: var(--purple-light); }
+  .mode-btn.active-horo .mode-name { color: var(--purple); }
+
+  .credits-bar { display: flex; align-items: center; justify-content: space-between; background: white; border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1.5rem; }
+  .credits-left { font-size: 14px; }
+  .credits-left strong { color: var(--red); }
+  .credits-buy { font-size: 13px; font-weight: 500; color: var(--red); background: var(--red-light); padding: 5px 12px; border-radius: 6px; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+
+  .field { margin-bottom: 1.1rem; }
+  .field label { display: block; font-size: 12px; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem; }
+  .field input, .field textarea, .field select { width: 100%; padding: 0.7rem 0.9rem; font-size: 15px; font-family: 'DM Sans', sans-serif; border: 1px solid var(--border); border-radius: 8px; background: white; color: var(--ink); transition: border-color 0.15s; }
+  .field input:focus, .field textarea:focus, .field select:focus { outline: none; }
+  .field input:focus, .field textarea:focus { border-color: var(--red); }
+  .field select:focus { border-color: var(--purple); }
+
+  .roast-fields { display: none; }
+  .horo-fields { display: none; }
+  .roast-fields.show, .horo-fields.show { display: block; }
+
+  .format-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .fmt-btn { padding: 0.65rem 0.9rem; border: 1px solid var(--border); border-radius: 8px; background: white; font-size: 13px; font-family: 'DM Sans', sans-serif; color: var(--ink); cursor: pointer; text-align: left; transition: all 0.15s; }
+  .fmt-btn.sel-roast { border-color: var(--red); background: var(--red-light); color: var(--red); font-weight: 500; }
+  .fmt-btn.sel-horo { border-color: var(--purple); background: var(--purple-light); color: var(--purple); font-weight: 500; }
+
+  .gen-btn { width: 100%; padding: 0.95rem; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; margin-top: 0.5rem; transition: opacity 0.15s; }
+  .gen-btn.roast { background: var(--red); }
+  .gen-btn.horoscope { background: var(--purple); }
+  .gen-btn:hover { opacity: 0.88; }
+  .gen-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .output-area { margin-top: 2rem; display: none; }
+  .output-tag { display: inline-block; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 10px; border-radius: 4px; margin-bottom: 0.85rem; }
+  .output-tag.roast { color: var(--red); background: var(--red-light); }
+  .output-tag.horoscope { color: var(--purple); background: var(--purple-light); }
+  .output-card { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; margin-bottom: 1rem; font-size: 14px; line-height: 1.85; white-space: pre-wrap; color: var(--ink); }
+  .output-card.memo { font-family: 'Courier New', monospace; font-size: 13px; }
+  .output-card.legal { font-family: 'Times New Roman', serif; font-size: 15px; }
+  .output-card.stars { font-size: 15px; line-height: 2; }
+  .output-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .act-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px; background: white; font-size: 13px; font-family: 'DM Sans', sans-serif; color: var(--ink); cursor: pointer; transition: all 0.15s; text-decoration: none; }
+  .act-btn:hover { background: var(--red-light); border-color: var(--red); color: var(--red); }
+  .act-btn.primary { background: var(--ink); color: white; border-color: var(--ink); }
+  .act-btn.primary:hover { background: var(--red); border-color: var(--red); }
+
+  .viral-box { border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1rem; background: white; }
+  .viral-label { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.75rem; }
+
+  .upsell-box { border-radius: 10px; padding: 1.25rem; margin-top: 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .upsell-box.roast { background: var(--red-light); border: 1px solid rgba(200,50,26,0.2); }
+  .upsell-box.horoscope { background: var(--purple-light); border: 1px solid rgba(91,63,166,0.2); }
+  .upsell-text { font-size: 14px; line-height: 1.5; }
+  .upsell-text strong { display: block; margin-bottom: 2px; }
+  .upsell-cta { display: inline-flex; align-items: center; gap: 6px; color: white; padding: 8px 18px; border-radius: 6px; font-size: 13px; font-weight: 500; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; white-space: nowrap; }
+  .upsell-cta.roast { background: var(--red); }
+  .upsell-cta.horoscope { background: var(--purple); }
+
+  .loading { text-align: center; padding: 2.5rem; color: var(--muted); font-size: 14px; }
+  .dots { display: inline-flex; gap: 5px; margin-bottom: 0.6rem; }
+  .dots span { width: 8px; height: 8px; border-radius: 50%; animation: ld 1.2s ease-in-out infinite; }
+  .dots.red span { background: var(--red); }
+  .dots.purple span { background: var(--purple); }
+  .dots span:nth-child(2) { animation-delay: 0.2s; }
+  .dots span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes ld { 0%,100%{opacity:0.25;transform:scale(0.7)}50%{opacity:1;transform:scale(1)} }
+  .error-msg { background: var(--red-light); border-radius: 8px; padding: 1rem; font-size: 14px; margin-top: 1rem; line-height: 1.6; color: var(--red); }
+
+  /* PAYMENT MODAL */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 200; align-items: center; justify-content: center; padding: 1rem; }
+  .modal-overlay.open { display: flex; }
+  .modal { background: white; border-radius: 16px; padding: 2rem; max-width: 420px; width: 100%; }
+  .modal-title { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; margin-bottom: 0.4rem; }
+  .modal-sub { font-size: 14px; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.6; }
+  .modal-price { display: flex; align-items: baseline; gap: 8px; margin-bottom: 1.5rem; }
+  .modal-price-num { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 900; color: var(--red); }
+  .modal-price-detail { font-size: 14px; color: var(--muted); line-height: 1.5; }
+  .modal-features { margin-bottom: 1.5rem; }
+  .modal-feature { display: flex; align-items: center; gap: 8px; font-size: 14px; padding: 6px 0; border-top: 1px solid var(--border); }
+  .modal-feature i { color: var(--red); font-size: 15px; }
+  .stripe-btn { width: 100%; padding: 0.95rem; background: var(--ink); color: white; border: none; border-radius: 8px; font-size: 15px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: background 0.15s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .stripe-btn:hover { background: var(--red); }
+  .modal-close { display: block; text-align: center; font-size: 13px; color: var(--muted); margin-top: 1rem; cursor: pointer; background: none; border: none; font-family: 'DM Sans', sans-serif; }
+  .modal-note { font-size: 12px; color: var(--muted); text-align: center; margin-top: 0.75rem; }
+
+  footer { border-top: 1px solid var(--border); padding: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 900; }
+  .footer-logo span { color: var(--red); }
+  .footer-copy { font-size: 13px; color: var(--muted); }
+
+  @media (max-width: 600px) {
+    .products { grid-template-columns: 1fr; }
+    .example-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; }
+    .hero { padding: 3rem 1.25rem 2.5rem; }
+    nav { padding: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo" onclick="showLanding(); return false;">Burn<span>Book</span></a>
+  <button class="nav-cta" onclick="openPayment()">Get 5 credits — $2</button>
+</nav>
+
+<!-- PAYMENT MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="modal-title">Get 5 credits</div>
+    <div class="modal-sub">One credit = one roast card or one savage horoscope. Use them however you want.</div>
+    <div class="modal-price">
+      <div class="modal-price-num">$2</div>
+      <div class="modal-price-detail">one-time<br>no subscription ever</div>
+    </div>
+    <div class="modal-features">
+      <div class="modal-feature"><i class="ti ti-check"></i> 5 roast cards or horoscopes (mix & match)</div>
+      <div class="modal-feature"><i class="ti ti-check"></i> All 6 roast formats + all 12 zodiac signs</div>
+      <div class="modal-feature"><i class="ti ti-check"></i> Copy, share, screenshot</div>
+      <div class="modal-feature"><i class="ti ti-check"></i> Credits never expire</div>
+    </div>
+    <button class="stripe-btn" onclick="handlePayment()">
+      <i class="ti ti-credit-card"></i> Pay $2 with Stripe
+    </button>
+    <p class="modal-note">Powered by Stripe. We never see your card details.</p>
+    <button class="modal-close" onclick="closeModal()">No thanks, I'll try the free one first</button>
+  </div>
+</div>
+
+<!-- LANDING -->
+<div class="landing" id="landing">
+
+  <section class="hero">
+    <div class="hero-pill">🔥 Two products. One price. Zero subscriptions.</div>
+    <h1 class="hero-title">The internet's<br><em>meanest</em> card shop</h1>
+    <p class="hero-sub">AI roast cards & savage horoscopes. $2 for 5. Cheaper than a birthday card. Way more memorable.</p>
+    <div class="price-banner">
+      <div class="price-main">$2</div>
+      <div class="price-detail">
+        <strong>5 roasts or horoscopes</strong>
+        <span>No subscription. Credits never expire.</span>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <button class="btn-red" onclick="showGenerator()"><i class="ti ti-flame"></i> Try one free</button>
+      <button class="btn-ghost" onclick="openPayment()">Get 5 for $2</button>
+    </div>
+    <p class="hero-note">First one's free. No credit card required.</p>
+  </section>
+
+  <div class="products">
+    <div class="product-card">
+      <div class="product-header roast">
+        <span class="product-icon">🔥</span>
+        <div class="product-name roast">Roast Cards</div>
+        <div class="product-tagline">Personalized savage cards disguised as professional documents.</div>
+      </div>
+      <div class="product-body">
+        <div class="product-feature"><i class="ti ti-check roast"></i> Corporate memo, legal notice, Yelp review, LinkedIn rec, doctor's note, performance review</div>
+        <div class="product-feature"><i class="ti ti-check roast"></i> Specific to your person — not a template</div>
+        <div class="product-feature"><i class="ti ti-check roast"></i> 3 intensity levels: gentle to absolutely no survivors</div>
+        <button class="product-try roast" onclick="showGenerator('roast')">🔥 Try a roast card</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-header horoscope">
+        <span class="product-icon">🔮</span>
+        <div class="product-name horoscope">Savage Horoscopes</div>
+        <div class="product-tagline">Astrology that actually calls out your flaws. Brutally specific.</div>
+      </div>
+      <div class="product-body">
+        <div class="product-feature"><i class="ti ti-check horo"></i> All 12 zodiac signs — none of them are safe</div>
+        <div class="product-feature"><i class="ti ti-check horo"></i> Add personal details to make it devastatingly accurate</div>
+        <div class="product-feature"><i class="ti ti-check horo"></i> Weekly reading, love life, career, or general roast</div>
+        <button class="product-try horoscope" onclick="showGenerator('horoscope')">🔮 Try a horoscope</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="examples">
+    <div class="section-center">
+      <h2 class="section-title">Real examples. Real damage.</h2>
+      <p class="section-sub">Generated in seconds. Remembered forever.</p>
+    </div>
+    <div class="example-grid">
+      <div class="ex-card">
+        <div class="ex-header roast">🔥 Corporate memo — Dave's 40th</div>
+        <div class="ex-body memo">TO: Dave Henderson, Self-Proclaimed Grill Master
+FROM: Dept. of Culinary Accountability
+RE: Ongoing Pattern of Thermally Compromised Meat
+
+EXECUTIVE SUMMARY: Mr. Henderson continues to operate a Weber kettle despite a 6-year track record of transforming premium cuts into what analysts describe as "carbon-forward protein artifacts."
+
+KEY FINDINGS: The phrase "trust the process" has been uttered 847 times with a 0% success rate.
+
+RECOMMENDED ACTION: Retire the apron. Order the pizza first. Consider therapy.
+
+Happy 40th Dave. We love you. Please stop.
+
+Made with BurnBook.com 🔥</div>
+      </div>
+      <div class="ex-card">
+        <div class="ex-header horoscope">🔮 Scorpio — Weekly reading</div>
+        <div class="ex-body stars">♏ SCORPIO
+Oct 23 – Nov 21
+
+The stars this week are aligned in a configuration astrologers call "you did this to yourself."
+
+Mercury in retrograde is not responsible for your situationship. That's just you.
+
+Your love life: Venus suggests the person you're "not really texting" has seen your messages. All of them. At 2am.
+
+Career: A powerful opportunity arrives Thursday. You will overthink it until Sunday and then decide it "wasn't meant to be."
+
+Lucky number: The number of times you've said "I'm fine" this week when you were not fine.
+
+This week's affirmation: "I will text back within 3 business days."
+
+Made with BurnBook.com 🔥</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how">
+    <h2 class="section-title">Three steps to ruin someone's day (lovingly)</h2>
+    <div class="steps">
+      <div>
+        <div class="step-num red">1</div>
+        <div class="step-title">Pick your weapon</div>
+        <div class="step-desc">Roast card or savage horoscope. Both are equally devastating.</div>
+      </div>
+      <div>
+        <div class="step-num purple">2</div>
+        <div class="step-title">Add the details</div>
+        <div class="step-desc">The more specific you get, the more accurate the destruction.</div>
+      </div>
+      <div>
+        <div class="step-num gold">3</div>
+        <div class="step-title">Send it</div>
+        <div class="step-desc">Copy, screenshot, share. Watch them spiral. Feel nothing.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reddit">
+    <h2 class="reddit-title">Built for <em>Reddit posts</em><br>that go viral</h2>
+    <p class="reddit-sub">Every card has "Made with BurnBook.com" at the bottom. Every share is an ad. Every laugh is a conversion.</p>
+    <div class="post-mockup">
+      <div class="post-sub">r/funny • Posted by u/throwaway_revenge</div>
+      <div class="post-title">I paid $2 for AI to write a legal cease & desist about my brother's BBQ skills. He hasn't spoken to me in 3 days. [OC]</div>
+      <div class="post-votes">
+        <span>⬆️ <span class="vote-num">47.3k</span></span>
+        <span>💬 2.1k comments</span>
+        <span>🔗 Share</span>
+      </div>
+    </div>
+    <button class="btn-white" onclick="showGenerator()"><i class="ti ti-flame"></i> Make one like this</button>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Burn<span>Book</span></div>
+    <div class="footer-copy">© 2026 BurnBook. Made with fire and mild malice.</div>
+  </footer>
+
+</div>
+
+<!-- GENERATOR -->
+<div class="page" id="generator">
+  <div class="gen-wrap">
+    <button class="gen-back" onclick="showLanding()"><i class="ti ti-arrow-left"></i> Back</button>
+
+    <div class="mode-switch">
+      <button class="mode-btn active-roast" id="mode-roast" onclick="setMode('roast')">
+        <span class="mode-icon">🔥</span>
+        <div class="mode-name">Roast Card</div>
+        <div class="mode-sub">Destroy a specific person</div>
+      </button>
+      <button class="mode-btn" id="mode-horo" onclick="setMode('horoscope')">
+        <span class="mode-icon">🔮</span>
+        <div class="mode-name">Savage Horoscope</div>
+        <div class="mode-sub">Let the stars do the roasting</div>
+      </button>
+    </div>
+
+    <div class="credits-bar">
+      <div class="credits-left">Credits remaining: <strong id="credits-display">1 free</strong></div>
+      <button class="credits-buy" onclick="openPayment()">Get 5 more — $2</button>
+    </div>
+
+    <!-- ROAST FIELDS -->
+    <div class="roast-fields show" id="roast-fields">
+      <div class="field">
+        <label>Who are you roasting?</label>
+        <input type="text" id="target-name" placeholder="e.g. Mike, Aunt Carol, my boss Dave" maxlength="40">
+      </div>
+      <div class="field">
+        <label>Your relationship</label>
+        <input type="text" id="relationship" placeholder="e.g. college roommate, coworker, brother-in-law" maxlength="60">
+      </div>
+      <div class="field">
+        <label>Their most roastable qualities</label>
+        <textarea id="roast-details" placeholder="e.g. obsessed with CrossFit, tells the same 3 stories, thinks he's a grill master but burns everything..."></textarea>
+      </div>
+      <div class="field">
+        <label>Occasion</label>
+        <input type="text" id="occasion" placeholder="e.g. 40th birthday, retirement, just because" maxlength="60">
+      </div>
+      <div class="field">
+        <label>Format</label>
+        <div class="format-grid" id="format-grid">
+          <button class="fmt-btn sel-roast" data-format="memo" onclick="selectFormat(this)">📋 Corporate memo</button>
+          <button class="fmt-btn" data-format="legal" onclick="selectFormat(this)">⚖️ Legal notice</button>
+          <button class="fmt-btn" data-format="yelp" onclick="selectFormat(this)">⭐ Yelp review</button>
+          <button class="fmt-btn" data-format="linkedin" onclick="selectFormat(this)">💼 LinkedIn rec</button>
+          <button class="fmt-btn" data-format="doctor" onclick="selectFormat(this)">🩺 Doctor's note</button>
+          <button class="fmt-btn" data-format="performance" onclick="selectFormat(this)">📊 Performance review</button>
+        </div>
+      </div>
+      <div class="field">
+        <label>Intensity</label>
+        <select id="intensity">
+          <option value="gentle">Gentle — keep it friendly</option>
+          <option value="medium" selected>Medium — pull no punches</option>
+          <option value="savage">Savage — no survivors</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- HOROSCOPE FIELDS -->
+    <div class="horo-fields" id="horo-fields">
+      <div class="field">
+        <label>Zodiac sign</label>
+        <select id="zodiac">
+          <option value="Aries">♈ Aries (Mar 21 – Apr 19)</option>
+          <option value="Taurus">♉ Taurus (Apr 20 – May 20)</option>
+          <option value="Gemini">♊ Gemini (May 21 – Jun 20)</option>
+          <option value="Cancer">♋ Cancer (Jun 21 – Jul 22)</option>
+          <option value="Leo">♌ Leo (Jul 23 – Aug 22)</option>
+          <option value="Virgo">♍ Virgo (Aug 23 – Sep 22)</option>
+          <option value="Libra">♎ Libra (Sep 23 – Oct 22)</option>
+          <option value="Scorpio" selected>♏ Scorpio (Oct 23 – Nov 21)</option>
+          <option value="Sagittarius">♐ Sagittarius (Nov 22 – Dec 21)</option>
+          <option value="Capricorn">♑ Capricorn (Dec 22 – Jan 19)</option>
+          <option value="Aquarius">♒ Aquarius (Jan 20 – Feb 18)</option>
+          <option value="Pisces">♓ Pisces (Feb 19 – Mar 20)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Reading type</label>
+        <select id="reading-type">
+          <option value="weekly">Weekly reading</option>
+          <option value="love">Love life</option>
+          <option value="career">Career</option>
+          <option value="general">General roast</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Personal details to make it devastatingly accurate (optional)</label>
+        <textarea id="horo-details" placeholder="e.g. just got out of a 3-year relationship, obsessed with their morning routine, texts back 3 days late, thinks they're always the most interesting person in the room..."></textarea>
+      </div>
+      <div class="field">
+        <label>Who's this for?</label>
+        <input type="text" id="horo-name" placeholder="e.g. yourself, your friend Sarah, your ex..." maxlength="40">
+      </div>
+    </div>
+
+    <button class="gen-btn roast" id="gen-btn" onclick="generate()">🔥 Generate roast card</button>
+    <div class="output-area" id="output-area"></div>
+  </div>
+</div>
+
+<script>
+const ROAST_PROMPTS = {
+  memo: `Write it as an internal corporate memo with TO:, FROM:, RE:, DATE: headers and sections like "Executive Summary", "Key Findings", "Recommended Action Items". Corporate jargon hilariously mismatched with petty personal content. End with "Made with BurnBook.com 🔥"`,
+  legal: `Write it as a formal legal cease and desist with fake case numbers, legalese, WHEREAS clauses, numbered demands, fake law firm signature block. End with "Made with BurnBook.com 🔥"`,
+  yelp: `Write as a Yelp review with overall star rating and sub-ratings (e.g. Punctuality: ⭐⭐). Passive-aggressive 3-star reviewer tone. End with "Made with BurnBook.com 🔥"`,
+  linkedin: `Write as a glowing LinkedIn recommendation where corporate doublespeak ("unique approach to deadlines") carries devastating subtext. End with "Made with BurnBook.com 🔥"`,
+  doctor: `Write as a formal clinical note with fake latin-ish diagnoses, prognosis, and treatment recommendations. Clinical detachment makes ordinary flaws sound like rare conditions. End with "Made with BurnBook.com 🔥"`,
+  performance: `Write as an annual performance review with numerical ratings (1-5) on competencies, "Areas of Strength", "Opportunities for Growth", overall rating. HR language thinly veils the savage truth. End with "Made with BurnBook.com 🔥"`
+};
+
+const FORMAT_LABELS = { memo:'Corporate memo', legal:'Legal notice', yelp:'Yelp review', linkedin:'LinkedIn rec', doctor:"Doctor's note", performance:'Performance review' };
+const READING_LABELS = { weekly:'Weekly reading', love:'Love life', career:'Career', general:'General roast' };
+
+let currentMode = 'roast';
+let selectedFormat = 'memo';
+let credits = parseInt(localStorage.getItem('bb_credits') ?? '1');
+let usedFree = localStorage.getItem('bb_used_free') === 'true';
+
+function updateCreditsDisplay() {
+  const el = document.getElementById('credits-display');
+  if (!usedFree) { el.textContent = '1 free'; el.style.color = 'var(--red)'; }
+  else if (credits > 0) { el.textContent = credits; el.style.color = 'var(--red)'; }
+  else { el.textContent = '0 — buy more'; el.style.color = '#aaa'; }
+}
+
+updateCreditsDisplay();
+
+function showLanding() {
+  document.getElementById('landing').classList.remove('hidden');
+  document.getElementById('generator').classList.remove('active');
+  window.scrollTo(0, 0);
+}
+
+function showGenerator(mode) {
+  document.getElementById('landing').classList.add('hidden');
+  document.getElementById('generator').classList.add('active');
+  if (mode) setMode(mode);
+  window.scrollTo(0, 0);
+}
+
+function setMode(mode) {
+  currentMode = mode;
+  document.getElementById('mode-roast').className = 'mode-btn' + (mode === 'roast' ? ' active-roast' : '');
+  document.getElementById('mode-horo').className = 'mode-btn' + (mode === 'horoscope' ? ' active-horo' : '');
+  document.getElementById('roast-fields').className = 'roast-fields' + (mode === 'roast' ? ' show' : '');
+  document.getElementById('horo-fields').className = 'horo-fields' + (mode === 'horoscope' ? ' show' : '');
+  const btn = document.getElementById('gen-btn');
+  btn.className = 'gen-btn ' + (mode === 'roast' ? 'roast' : 'horoscope');
+  btn.textContent = mode === 'roast' ? '🔥 Generate roast card' : '🔮 Generate horoscope';
+  document.getElementById('output-area').style.display = 'none';
+}
+
+function selectFormat(btn) {
+  document.querySelectorAll('.fmt-btn').forEach(b => b.classList.remove('sel-roast', 'sel-horo'));
+  btn.classList.add('sel-roast');
+  selectedFormat = btn.dataset.format;
+}
+
+function openPayment() { document.getElementById('modal').classList.add('open'); }
+function closeModal() { document.getElementById('modal').classList.remove('open'); }
+
+function handlePayment() {
+  alert('To activate payments, add your Stripe payment link here. See README for instructions.');
+  closeModal();
+}
+
+function hasCredits() {
+  if (!usedFree) return true;
+  return credits > 0;
+}
+
+function useCredit() {
+  if (!usedFree) { usedFree = true; localStorage.setItem('bb_used_free', 'true'); }
+  else { credits = Math.max(0, credits - 1); localStorage.setItem('bb_credits', credits); }
+  updateCreditsDisplay();
+}
+
+async function generate() {
+  if (!hasCredits()) {
+    document.getElementById('output-area').style.display = 'block';
+    document.getElementById('output-area').innerHTML = `
+      <div style="text-align:center;padding:2rem;">
+        <p style="font-size:15px;color:var(--muted);margin-bottom:1.25rem;line-height:1.6;">You're out of credits.<br>Get 5 more for $2 — they never expire.</p>
+        <button class="btn-red" onclick="openPayment()">Get 5 credits — $2</button>
+      </div>`;
+    return;
+  }
+
+  let prompt = '';
+  let outputClass = '';
+  let outputLabel = '';
+
+  if (currentMode === 'roast') {
+    const name = document.getElementById('target-name').value.trim();
+    const relationship = document.getElementById('relationship').value.trim();
+    const details = document.getElementById('roast-details').value.trim();
+    const occasion = document.getElementById('occasion').value.trim();
+    const intensity = document.getElementById('intensity').value;
+    if (!name || !details) { alert('Add a name and some roastable qualities first.'); return; }
+    const intensityDesc = { gentle:'affectionate and playful, gently teasing', medium:'sharp and funny, no punches pulled but still loving', savage:'absolutely brutal roast-battle level, but clearly from a place of deep affection' }[intensity];
+    prompt = `Write a personalized roast card for ${name}${relationship?' ('+relationship+')':''}${occasion?' for their '+occasion:''}.
+Roastable qualities: ${details}
+${ROAST_PROMPTS[selectedFormat]}
+Tone: ${intensityDesc}. Be specific to these exact details, not generic. Length: 220-300 words. Write ONLY the card content.`;
+    outputClass = selectedFormat;
+    outputLabel = FORMAT_LABELS[selectedFormat];
+  } else {
+    const zodiac = document.getElementById('zodiac').value;
+    const readingType = document.getElementById('reading-type').value;
+    const details = document.getElementById('horo-details').value.trim();
+    const name = document.getElementById('horo-name').value.trim();
+    prompt = `Write a savage, brutally honest horoscope for ${zodiac}${name?' (for '+name+')':''}.
+Reading type: ${readingType}.
+${details ? 'Personal details to incorporate: ' + details : ''}
+Style: Reads like a real horoscope but calls out classic ${zodiac} flaws with devastating specificity. Use astrology language (Mercury, Venus, retrograde, etc.) but make it funny and uncomfortably accurate. Mix genuine insight with savage roasting. Include a "Lucky number" and a "This week's affirmation" that's equally savage.
+Length: 200-280 words. End with "Made with BurnBook.com 🔥". Write ONLY the horoscope content.`;
+    outputClass = 'stars';
+    outputLabel = `${zodiac} — ${READING_LABELS[readingType]}`;
+  }
+
+  const btn = document.getElementById('gen-btn');
+  btn.disabled = true;
+  btn.textContent = currentMode === 'roast' ? 'Roasting...' : 'Reading the stars...';
+
+  const outputArea = document.getElementById('output-area');
+  outputArea.style.display = 'block';
+  const dotClass = currentMode === 'roast' ? 'red' : 'purple';
+  outputArea.innerHTML = `<div class="loading"><div class="dots ${dotClass}"><span></span><span></span><span></span></div><br>${currentMode === 'roast' ? 'Writing your roast...' : 'Consulting the cosmos...'}</div>`;
+
+  try {
+    const res = await fetch('/api/generate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt })
+    });
+    const data = await res.json();
+    if (data.error) throw new Error(data.error);
+
+    useCredit();
+
+    const tagClass = currentMode === 'roast' ? 'roast' : 'horoscope';
+    const twitterText = encodeURIComponent(currentMode === 'roast' ? 'Someone just got roasted 🔥 burnbook.com' : 'The stars have spoken and they are not kind 🔮 burnbook.com');
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${twitterText}`;
+
+    outputArea.innerHTML = `
+      <div class="output-tag ${tagClass}">${outputLabel}</div>
+      <div class="output-card ${outputClass}" id="card-text">${data.result}</div>
+      <div class="output-actions">
+        <button class="act-btn primary" onclick="copyCard()"><i class="ti ti-copy"></i> Copy</button>
+        <button class="act-btn" onclick="generate()"><i class="ti ti-refresh"></i> Regenerate</button>
+        <a class="act-btn" href="${twitterUrl}" target="_blank"><i class="ti ti-brand-x"></i> Post on X</a>
+      </div>
+      <div class="upsell-box ${currentMode === 'roast' ? 'roast' : 'horoscope'}">
+        <div class="upsell-text">
+          <strong>Want more?</strong>
+          $2 gets you 5 credits. Mix roasts and horoscopes. Credits never expire.
+        </div>
+        <button class="upsell-cta ${currentMode === 'roast' ? 'roast' : 'horoscope'}" onclick="openPayment()">
+          Get 5 for $2
+        </button>
+      </div>`;
+  } catch(e) {
+    outputArea.innerHTML = `<div class="error-msg"><strong>Something went wrong:</strong> ${e.message}</div>`;
+  }
+
+  btn.disabled = false;
+  btn.textContent = currentMode === 'roast' ? '🔥 Generate roast card' : '🔮 Generate horoscope';
+}
+
+function copyCard() {
+  const text = document.getElementById('card-text').innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = event.target.closest('button');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<i class="ti ti-check"></i> Copied!';
+    setTimeout(() => btn.innerHTML = orig, 2000);
+  });
+}
+</script>
+</body>
+</html>
