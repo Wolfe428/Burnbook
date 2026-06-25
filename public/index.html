@@ -551,8 +551,24 @@ function openPayment() { document.getElementById('modal').classList.add('open');
 function closeModal() { document.getElementById('modal').classList.remove('open'); }
 
 function handlePayment() {
+  localStorage.setItem('bb_pending_payment', 'true');
   window.location.href = 'https://buy.stripe.com/4gM14ofuReT51jr3qLawo00';
 }
+
+function checkPaymentReturn() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('payment') === 'success') {
+    credits += 5;
+    usedFree = true;
+    localStorage.setItem('bb_credits', credits);
+    localStorage.setItem('bb_used_free', 'true');
+    updateCreditsDisplay();
+    window.history.replaceState({}, document.title, window.location.pathname);
+    setTimeout(() => alert('🔥 5 credits added! Go burn someone.'), 500);
+  }
+}
+
+checkPaymentReturn();
 
 function hasCredits() {
   if (!usedFree) return true;
