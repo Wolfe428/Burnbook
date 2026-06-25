@@ -551,8 +551,7 @@ function openPayment() { document.getElementById('modal').classList.add('open');
 function closeModal() { document.getElementById('modal').classList.remove('open'); }
 
 function handlePayment() {
-  alert('To activate payments, add your Stripe payment link here. See README for instructions.');
-  closeModal();
+  window.location.href = 'https://buy.stripe.com/4gM14ofuReT51jr3qLawo00';
 }
 
 function hasCredits() {
