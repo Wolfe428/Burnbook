@@ -550,7 +550,50 @@ function selectFormat(btn) {
 function openPayment() { document.getElementById('modal').classList.add('open'); }
 function closeModal() { document.getElementById('modal').classList.remove('open'); }
 
+function saveFormState() {
+  const state = {
+    mode: currentMode,
+    format: selectedFormat,
+    name: document.getElementById('target-name').value,
+    relationship: document.getElementById('relationship').value,
+    details: document.getElementById('roast-details').value,
+    occasion: document.getElementById('occasion').value,
+    intensity: document.getElementById('intensity').value,
+    zodiac: document.getElementById('zodiac').value,
+    readingType: document.getElementById('reading-type').value,
+    horoDetails: document.getElementById('horo-details').value,
+    horoName: document.getElementById('horo-name').value,
+  };
+  localStorage.setItem('bb_form_state', JSON.stringify(state));
+}
+
+function restoreFormState() {
+  const saved = localStorage.getItem('bb_form_state');
+  if (!saved) return;
+  const state = JSON.parse(saved);
+  localStorage.removeItem('bb_form_state');
+  setMode(state.mode || 'roast');
+  if (state.name) document.getElementById('target-name').value = state.name;
+  if (state.relationship) document.getElementById('relationship').value = state.relationship;
+  if (state.details) document.getElementById('roast-details').value = state.details;
+  if (state.occasion) document.getElementById('occasion').value = state.occasion;
+  if (state.intensity) document.getElementById('intensity').value = state.intensity;
+  if (state.zodiac) document.getElementById('zodiac').value = state.zodiac;
+  if (state.readingType) document.getElementById('reading-type').value = state.readingType;
+  if (state.horoDetails) document.getElementById('horo-details').value = state.horoDetails;
+  if (state.horoName) document.getElementById('horo-name').value = state.horoName;
+  if (state.format) {
+    document.querySelectorAll('.fmt-btn').forEach(b => {
+      b.classList.remove('sel-roast', 'sel-horo');
+      if (b.dataset.format === state.format) b.classList.add('sel-roast');
+    });
+    selectedFormat = state.format;
+  }
+  showGenerator();
+}
+
 function handlePayment() {
+  saveFormState();
   localStorage.setItem('bb_pending_payment', 'true');
   window.location.href = 'https://buy.stripe.com/4gM14ofuReT51jr3qLawo00';
 }
@@ -564,6 +607,7 @@ function checkPaymentReturn() {
     localStorage.setItem('bb_used_free', 'true');
     updateCreditsDisplay();
     window.history.replaceState({}, document.title, window.location.pathname);
+    restoreFormState();
     setTimeout(() => alert('🔥 5 credits added! Go burn someone.'), 500);
   }
 }
